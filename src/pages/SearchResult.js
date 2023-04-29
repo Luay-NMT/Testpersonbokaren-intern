@@ -88,7 +88,7 @@ export default function SearchResult() {
           setColumns([
             { field: 'testpersonId', headerName: 'Personidentitet', flex: 1, align: 'center', headerAlign: 'center' },
             { field: 'isBooked' ,headerName: 'Bokad', flex: 0.5, align: 'center', headerAlign: 'center' },
-            { field: 'bookingUserFullName', headerName: 'Bokad Av',  flex: 1, align: 'center', headerAlign: 'center' },
+            { field: 'bookingUserFullName', headerName: 'Bokad åt',  flex: 1, align: 'center', headerAlign: 'center' },
           ]);
         }
         else if(searchParams.get('type') === "group"){
@@ -98,7 +98,7 @@ export default function SearchResult() {
           })
           setColumns([
             { field: 'testpersonId', headerName: 'Personidentitet', flex: 1, align: 'center', headerAlign: 'center' },
-            { field: 'bookingUserFullName', headerName: 'Bokad Av',  flex: 1, align: 'center', headerAlign: 'center' },
+            { field: 'bookingUserFullName', headerName: 'Bokad åt',  flex: 1, align: 'center', headerAlign: 'center' },
           ]);
         } else if(searchParams.get('type') === "agespan"){
           searchBasedOnAgeSpan(searchParams.get('min'), searchParams.get('max')).then((res) =>{
@@ -108,7 +108,7 @@ export default function SearchResult() {
           setColumns([
             { field: 'testpersonId', headerName: 'Personidentitet', flex: 1, align: 'center', headerAlign: 'center' },
             { field: 'isBooked' ,headerName: 'Bokad', flex: 0.5, align: 'center', headerAlign: 'center' },
-            { field: 'bookingUserFullName', headerName: 'Bokad Av',  flex: 1, align: 'center', headerAlign: 'center' },
+            { field: 'bookingUserFullName', headerName: 'Bokad åt',  flex: 1, align: 'center', headerAlign: 'center' },
           ]);
         }else if(searchParams.get('type') === "birthyear"){
           searchBasedOnBirthYear(searchParams.get('min'), searchParams.get('max')).then((res) =>{
@@ -118,7 +118,7 @@ export default function SearchResult() {
           setColumns([
             { field: 'testpersonId', headerName: 'Personidentitet', flex: 1, align: 'center', headerAlign: 'center' },
             { field: 'isBooked' ,headerName: 'Bokad', flex: 0.5, align: 'center', headerAlign: 'center' },
-            { field: 'bookingUserFullName', headerName: 'Bokad Av',  flex: 1, align: 'center', headerAlign: 'center' },
+            { field: 'bookingUserFullName', headerName: 'Bokad åt',  flex: 1, align: 'center', headerAlign: 'center' },
           ]);
         }
         
