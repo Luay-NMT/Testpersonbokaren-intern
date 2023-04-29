@@ -8,9 +8,6 @@ import AddOrUpdateBookingForm from '../components/AddOrUpdateBookingForm';
 import ConfirmationMessage from '../components/ConfirmationMessage';
 import { getAllTestpersons } from '../APICalls';
 
-import { useDebouncedCallback } from 'use-debounce';
-
-
 function CustomToolbar({onConfirm, selectedRows}) {
   return (
     <GridToolbarContainer>
@@ -55,22 +52,7 @@ export default function Personer() {
       
     };
 
-    const debouncedSetName = useDebouncedCallback(
-      (value) => {
-        setName(value);
-      },
-      // delay in ms
-      5
-    );
-
-    const debouncedSetEmail = useDebouncedCallback(
-      (value) => {
-        setEmail(value);
-      },
-      // delay in ms
-      5
-    );
-     const [rows, setRows] = useState([]);
+  const [rows, setRows] = useState([]);
 
 useEffect(() => {
    getAllTestpersons().then((res) =>{
@@ -135,9 +117,9 @@ const columns = [
                 type={"newBooking"}
                 title={"Ny bokning(ar)"}
                 name={name}
-                setName={debouncedSetName}
+                setName={setName}
                 email={email}
-                setEmail={debouncedSetEmail}
+                setEmail={setEmail}
                 organisation={organisation}
                 setOrganisation={setOrganisation}
                 inputValue={inputValue}
