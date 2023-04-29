@@ -11,8 +11,6 @@ import ConfirmationQuestion from "../components/ConfirmationQuestion";
 import AddOrUpdateUserForm from '../components/AddOrUpdateUserForm';
 import ConfirmationMessage from '../components/ConfirmationMessage';
 import { getAllUsers, deleteUser, getGroup } from '../APICalls';
-import { useDebouncedCallback } from 'use-debounce';
-
 
 
 function CustomToolbar({onConfirm, selectedRows}) {
@@ -86,23 +84,6 @@ export default function Users() {
       };
 
      const [rows, setRows] = useState([]);
-
-     const debouncedSetName = useDebouncedCallback(
-      (value) => {
-        setName(value);
-      },
-      // delay in ms
-      5
-    );
-  
-    const debouncedSetShortName = useDebouncedCallback(
-      (value) => {
-        setShortName(value);
-      },
-      // delay in ms
-      5
-    );
-
 
   useEffect(() => {
     getAllUsers().then((res) =>{
@@ -193,9 +174,9 @@ const columns = [
                 type={"newUser"}
                 title={"Ny användare"}
                 name={name}
-                setName={debouncedSetName}
+                setName={setName}
                 shortName={shortName}
-                setShortName={debouncedSetShortName}
+                setShortName={setShortName}
                 organisation={organisation}
                 setOrganisation={setOrganisation}
         />
@@ -207,9 +188,9 @@ const columns = [
                 type={"updateUser"}
                 title={"Redigera  användare"}
                 name={name}
-                setName={debouncedSetName}
+                setName={setName}
                 shortName={shortName}
-                setShortName={debouncedSetShortName}
+                setShortName={setShortName}
                 organisation={organisation}
                 setOrganisation={setOrganisation}
             />
