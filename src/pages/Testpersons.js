@@ -92,7 +92,7 @@ useEffect(() => {
 const columns = [
   { field: 'testpersonId', headerName: 'Personidentitet', flex: 1, align: 'center', headerAlign: 'center' },
   { field: 'isBooked' ,headerName: 'Bokad', flex: 1, align: 'center', headerAlign: 'center' },
-  { field: 'bookingUserFullName', headerName: 'Bokad Av',  flex: 1, align: 'center', headerAlign: 'center' },
+  { field: 'bookingUserFullName', headerName: 'Bokad åt',  flex: 1, align: 'center', headerAlign: 'center' },
  
 ];
   return (
