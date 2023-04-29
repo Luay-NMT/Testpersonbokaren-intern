@@ -90,7 +90,7 @@ function getAgeSpan(min, max){
             </div>
 
             <div style={{marginTop: '40px', marginLeft: '50px'}}>
-            <Typography variant ="h6">Testpersoner mellan ett visst ålderspann</Typography>
+            <Typography variant ="h6">Testpersoner mellan ett visst åldersspann</Typography>
 
             <FormControl sx={{ m: 1, minWidth: 120, marginLeft:'0px' }}>
         <InputLabel id="Type">Typ</InputLabel>
