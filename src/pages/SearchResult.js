@@ -7,7 +7,6 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import AddOrUpdateBookingForm from '../components/AddOrUpdateBookingForm';
 import ConfirmationMessage from '../components/ConfirmationMessage';
 import { searchBasedOnTestpersonId, searchBasedOnAgeSpan, searchBasedOnBirthYear, searchBookingsBasedOnGroup } from '../APICalls';
-import { useDebouncedCallback } from 'use-debounce';
 import { useSearchParams } from 'react-router-dom';
 
 function CustomToolbar({onConfirm, rowSelectionModel}) {
@@ -60,21 +59,6 @@ export default function SearchResult() {
 
     };
     
-    const debouncedSetName = useDebouncedCallback(
-      (value) => {
-        setName(value);
-      },
-      // delay in ms
-      5
-    );
-
-    const debouncedSetEmail = useDebouncedCallback(
-      (value) => {
-        setEmail(value);
-      },
-      // delay in ms
-      5
-    );
      const [rows, setRows] = useState([]);
      const [columns, setColumns] = useState([]);
       
@@ -173,9 +157,9 @@ export default function SearchResult() {
                 type={"newBooking"}
                 title={"Ny bokning(ar)"}
                 name={name}
-                setName={debouncedSetName}
+                setName={setName}
                 email={email}
-                setEmail={debouncedSetEmail}
+                setEmail={setEmail}
                 organisation={organisation}
                 setOrganisation={setOrganisation}
                 inputValue={inputValue}
