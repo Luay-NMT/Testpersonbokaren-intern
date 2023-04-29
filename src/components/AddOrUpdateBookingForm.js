@@ -125,7 +125,7 @@ export default function AddOrUpdateBookingForm({ open , onClose, onConfirm, test
             options={users}
             autoHighlight
             fullWidth
-            getOptionLabel={(option) => `${option.fullName}` ` (${option.shortName})`}
+            getOptionLabel={(option) => `${option.fullName} (${option.shortName})`}
             isOptionEqualToValue={(option, value) => option.userId === value.userId}
             value={organisation}
             onChange={(event, newValue) => {
