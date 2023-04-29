@@ -11,9 +11,6 @@ import ConfirmationQuestion from "../components/ConfirmationQuestion";
 import ConfirmationMessage from '../components/ConfirmationMessage';
 import AddOrUpdateGroupForm from '../components/AddOrUpdateGroupForm';
 import { getAllGroups, deleteGroup } from '../APICalls';
-import { useDebouncedCallback } from 'use-debounce';
-
-
 
 
 function CustomToolbar({onConfirm, selectedRows}) {
@@ -74,23 +71,6 @@ export default function Groups() {
           setConfirmationQuestion(true);
         setGroupName(id.groupName + " (" + id.group + ")")
         };
-
-
-        const debouncedSetName = useDebouncedCallback(
-          (value) => {
-            setName(value);
-          },
-          // delay in ms
-          5
-        );
-      
-        const debouncedSetShortName = useDebouncedCallback(
-          (value) => {
-            setShortName(value);
-          },
-          // delay in ms
-          5
-        );
   
     useEffect(() => {
           getAllGroups().then((res) =>{
@@ -180,9 +160,9 @@ const columns = [
                 type={"newGroup"}
                 title={"Ny grupp"}
                 name={name}
-                setName={debouncedSetName}
+                setName={setName}
                 shortName={shortName}
-                setShortName={debouncedSetShortName}
+                setShortName={setShortName}
             />
             <AddOrUpdateGroupForm
                 open={updateGroupForm}
@@ -190,9 +170,9 @@ const columns = [
                 onConfirm={confirmNewGroup(groupId)}
                 groupId={groupId}
                 name={name}
-                setName={debouncedSetName}
+                setName={setName}
                 shortName={shortName}
-                setShortName={debouncedSetShortName}
+                setShortName={setShortName}
                 type={"updateGroup"}
                 title={"Redigera  grupp"}
             />
