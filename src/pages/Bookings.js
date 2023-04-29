@@ -9,7 +9,6 @@ import Tooltip from "@mui/material/Tooltip";
 import AddOrUpdateBookingForm from '../components/AddOrUpdateBookingForm';
 import ConfirmationMessage from '../components/ConfirmationMessage';
 import { getAllBookings, deleteBooking, getUser } from '../APICalls';
-import { useDebouncedCallback } from 'use-debounce';
 
 function CustomToolbar() {
   return (
@@ -76,21 +75,6 @@ function Bookings() {
     setConfirmationQuestion(true);
 
   };
-  const debouncedSetName = useDebouncedCallback(
-    (value) => {
-      setName(value);
-    },
-    // delay in ms
-    5
-  );
-
-  const debouncedSetEmail = useDebouncedCallback(
-    (value) => {
-      setEmail(value);
-    },
-    // delay in ms
-    5
-  );
 
     const theme = createTheme( { palette: { primary: { main: '#1d5a7a' } } }, svSE );
 
@@ -190,9 +174,9 @@ useEffect(() => {
                 type={"updateBooking"}
                 title={"Redigera bokning"}
                 name={name}
-                setName={debouncedSetName}
+                setName={setName}
                 email={email}
-                setEmail={debouncedSetEmail}
+                setEmail={setEmail}
                 organisation={organisation}
                 setOrganisation={setOrganisation}
                 inputValue={inputValue}
