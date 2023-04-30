@@ -190,7 +190,7 @@ const columns = [
 <ConfirmationMessage
                 open={confirmationMessage}
                 onClose={() => setConfirmationMessage(false)}
-                message ={"Grupper har uppdaterats"}
+                message ={"Gruppen har uppdaterats"}
                 title={"Bekräftelse"}
     />
     </div>
