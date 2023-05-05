@@ -81,7 +81,6 @@ function Navbar() {
 
             <li>
               <Link
-              to='http://localhost:4000/'
               target={"_blank"}
               rel="noopener noreferrer"
                 className='nav-links-mobile'
