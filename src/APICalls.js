@@ -1,7 +1,8 @@
 import Axios from "axios";
+const config = require('./config');
 
 const axiosClient = Axios.create({
-  baseURL: "http://localhost:5000/",
+  baseURL: config.apiURL,
 
 });
 
